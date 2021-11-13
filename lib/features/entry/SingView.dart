@@ -2,6 +2,7 @@ import 'package:day_night_switcher/day_night_switcher.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hepsiyoldaapp/core/ListTheme.dart';
+import 'package:hepsiyoldaapp/core/appBar.dart';
 import 'package:provider/src/provider.dart';
 
 class SignView extends StatelessWidget {
@@ -94,15 +95,16 @@ class SignView extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(
-          leading: DayNightSwitcher(
-              isDarkModeEnabled:
-                  context.watch<ListTheme>().isDark == true ? true : false,
-              onStateChanged: (isDarkModeEnabled) {
-
-                context.read<ListTheme>().change();
-
-              })),
+      // appBar: AppBar(
+      //     leading: DayNightSwitcher(
+      //         isDarkModeEnabled:
+      //             context.watch<ListTheme>().isDark == true ? true : false,
+      //         onStateChanged: (isDarkModeEnabled) {
+      //
+      //           context.read<ListTheme>().change();
+      //
+      //         })),
+      appBar: appBar(context: context,),
       backgroundColor: Color(0xff8c52ff),
       body: Padding(
         padding: EdgeInsets.all(36),

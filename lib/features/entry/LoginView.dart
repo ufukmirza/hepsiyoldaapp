@@ -9,6 +9,12 @@ class LoginView extends StatefulWidget {
 class _LoginPageState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+        body: Center(
+            child: TextButton(
+      onPressed: () {
+   Navigator.pushNamedAndRemoveUntil(context, "/menuScreen",(Route<dynamic> route) => false);
+      }, child: Text("merhaba"),
+    )));
   }
 }

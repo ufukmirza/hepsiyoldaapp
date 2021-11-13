@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hepsiyoldaapp/core/appBar.dart';
 import 'package:hepsiyoldaapp/features/basket/view/basketPage.dart';
 import 'package:hepsiyoldaapp/features/home/view/homePage.dart';
 
@@ -10,6 +11,7 @@ class tabViewClass extends StatelessWidget {
     return DefaultTabController(
         length: 2,
         child: Scaffold(
+          appBar: appBar(context:context),
           bottomNavigationBar: buildBottomAppBar(context),
           body: TabBarView(children: [
             homePage(),
