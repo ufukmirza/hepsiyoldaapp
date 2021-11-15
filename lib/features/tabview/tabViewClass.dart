@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hepsiyoldaapp/core/appBar.dart';
+import 'package:hepsiyoldaapp/components/appBar.dart';
 import 'package:hepsiyoldaapp/features/basket/view/basketPage.dart';
-import 'package:hepsiyoldaapp/features/home/view/homePage.dart';
+import 'package:hepsiyoldaapp/features/home/view/home.dart';
+import 'package:hepsiyoldaapp/features/home/view/homeView.dart';
 
 class tabViewClass extends StatelessWidget {
   @override
@@ -14,7 +15,7 @@ class tabViewClass extends StatelessWidget {
           appBar: appBar(context:context),
           bottomNavigationBar: buildBottomAppBar(context),
           body: TabBarView(children: [
-            homePage(),
+            Home(),
             basketPage()
           ]),
         ));

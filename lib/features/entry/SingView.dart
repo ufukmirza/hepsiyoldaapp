@@ -1,8 +1,8 @@
 import 'package:day_night_switcher/day_night_switcher.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hepsiyoldaapp/core/ListTheme.dart';
-import 'package:hepsiyoldaapp/core/appBar.dart';
+import 'package:hepsiyoldaapp/components/ListTheme.dart';
+import 'package:hepsiyoldaapp/components/appBar.dart';
 import 'package:provider/src/provider.dart';
 
 class SignView extends StatelessWidget {

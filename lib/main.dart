@@ -1,9 +1,11 @@
 import 'package:day_night_switcher/day_night_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:hepsiyoldaapp/features/tabview/tabViewClass.dart';
+import 'package:hepsiyoldaapp/shopping/model/Shop.dart';
+import 'package:hepsiyoldaapp/shopping/service/shoppingService.dart';
 import 'package:provider/provider.dart';
 
-import 'core/ListTheme.dart';
+import 'components/ListTheme.dart';
 import 'features/entry/SingView.dart';
 import 'features/router/RouterDart.dart';
 
@@ -41,8 +43,8 @@ import 'features/router/RouterDart.dart';
 
 void main() => runApp(MultiProvider(
       providers: [
-        //Provider<UserService>(create: (context) => UserService()),
-        //ChangeNotifierProvider<User>(create: (context) => User(context)),
+        Provider<ShoppingService>(create: (context) => ShoppingService()),
+        ChangeNotifierProvider<Shop>(create: (context) => Shop(context)),
         ChangeNotifierProvider<ListTheme>(create: (context) => ListTheme())
       ],
       child: MyApp(),
