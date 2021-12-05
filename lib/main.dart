@@ -41,15 +41,17 @@ import 'features/router/RouterDart.dart';
 //    }
 //   }
 
-void main() => runApp(MultiProvider(
-      providers: [
-        Provider<ShoppingService>(create: (context) => ShoppingService()),
-        ChangeNotifierProvider<Shop>(create: (context) => Shop(context)),
-        ChangeNotifierProvider<ListTheme>(create: (context) => ListTheme())
-      ],
-      child: MyApp(),
-    ));
-
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(MultiProvider(
+    providers: [
+      Provider<ShoppingService>(create: (context) => ShoppingService()),
+      ChangeNotifierProvider<Shop>(create: (context) => Shop(context)),
+      ChangeNotifierProvider<ListTheme>(create: (context) => ListTheme())
+    ],
+    child: MyApp(),
+  ));
+}
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -1,27 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hepsiyoldaapp/core/database/DatabaseHelper.dart';
 import 'package:hepsiyoldaapp/features/home/model/product_model.dart';
 import 'package:hepsiyoldaapp/shopping/model/Shop.dart';
 import 'package:provider/src/provider.dart';
+import 'package:sqflite/sqflite.dart';
 
 class ShopCard extends StatelessWidget {
   final Product product;
-
   const ShopCard({Key? key, required this.product}) : super(key: key);
+
+
 
   @override
   Widget build(BuildContext context) {
-    // return Card(
-    //   child: ListTile(
-    //     trailing: buildIconButtonAdd(context),
-    //     title: buildSizedBoxImage(context),
-    //     subtitle: buildWrapSub(),
-    //   ),
-    // );
     return InkWell(
-      onTap: () {
-        Navigator.pushNamed(context, "/");
-      },
+      onTap: () {},
       child: Stack(children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
@@ -55,10 +49,17 @@ class ShopCard extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Icon(
-                    Icons.shopping_cart_outlined,
-                    color: Colors.white,
-                  ),
+                  IconButton(
+                      icon: Icon(Icons.shopping_cart_outlined),
+                      color: Colors.white,
+                      onPressed: () {
+
+                        Future<Database> dbFuture= DatabaseHelper().initializeDatabase();
+                        dbFuture.then((value){ value.insert("products", product.toJson(), conflictAlgorithm: ConflictAlgorithm.replace);});
+
+                         //  dbFuture.deleteDatabase();
+
+                      }),
                 ],
               ),
             ),
@@ -76,18 +77,6 @@ class ShopCard extends StatelessWidget {
       },
     );
   }
-
-  // Widget buildSizedBoxImage(BuildContext context) {
-  //   return Column(
-  //     children: [
-  //       SizedBox(
-  //           height: MediaQuery.of(context).size.height * 0.2,
-  //           child: Image.network(product.image)),
-  //       SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-  //       buildContainerItem(context)
-  //     ],
-  //   );
-  // }
 
   Container buildContainerItem(BuildContext context) {
     return Container(
