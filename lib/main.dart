@@ -1,4 +1,5 @@
 import 'package:day_night_switcher/day_night_switcher.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hepsiyoldaapp/features/tabview/tabViewClass.dart';
 import 'package:hepsiyoldaapp/shopping/model/Shop.dart';
@@ -41,8 +42,9 @@ import 'features/router/RouterDart.dart';
 //    }
 //   }
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MultiProvider(
     providers: [
       Provider<ShoppingService>(create: (context) => ShoppingService()),

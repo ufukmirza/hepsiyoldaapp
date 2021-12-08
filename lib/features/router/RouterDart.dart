@@ -17,6 +17,8 @@ class RouterDart {
         return MaterialPageRoute(builder: (_) => RegisterView());
       case menuScreen:
         return MaterialPageRoute(builder: (_) => tabViewClass());
+      case addProductScreen:
+        return MaterialPageRoute(builder: (_) => tabViewClass());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
@@ -34,3 +36,4 @@ const String homeRoute = '/';
 const String loginScreen = '/loginScreen';
 const String registerScreen = '/registerScreen';
 const String menuScreen = '/menuScreen';
+const String addProductScreen="/addProductScreen";

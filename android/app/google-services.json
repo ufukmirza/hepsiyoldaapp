@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "109989106855",
+    "project_id": "sportgen-2938f",
+    "storage_bucket": "sportgen-2938f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109989106855:android:6273f5069f28efc363f782",
+        "android_client_info": {
+          "package_name": "com.example.hepsiyoldaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "109989106855-q160atej7cb9rpgoq6s3s7fage9t5984.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9a-MXBMKiIDtZzB5W5oHqoSzwpBOGtWo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "109989106855-q160atej7cb9rpgoq6s3s7fage9t5984.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

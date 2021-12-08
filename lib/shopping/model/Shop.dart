@@ -32,7 +32,7 @@ class Shop extends ChangeNotifier {
 
   void addFirstItemToBasket(Product product) {
     basketProducts[product] = 1;
-    service.addProduct(product);
+   // service.addProduct(product);
     notifyListeners();
   }
 
