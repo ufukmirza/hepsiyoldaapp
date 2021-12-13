@@ -4,6 +4,7 @@ class Product {
   late String image;
   late int total;
   late int price;
+  static final columns = ["sId", "name", "image", "price", "total"];
 
   Product({required this.sId, required this.name, required this.image, required this.total,required this.price});
 

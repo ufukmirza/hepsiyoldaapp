@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hepsiyoldaapp/components/appBar.dart';
 import 'package:hepsiyoldaapp/features/addProduct/addProductView.dart';
+import 'package:hepsiyoldaapp/features/basket/view/basket.dart';
 import 'package:hepsiyoldaapp/features/basket/view/basketPage.dart';
 import 'package:hepsiyoldaapp/features/home/model/product_model.dart';
 import 'package:hepsiyoldaapp/features/home/view/home.dart';
@@ -14,27 +15,27 @@ class tabViewClass extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    CollectionReference products = FirebaseFirestore.instance.collection('shopping');
+    // CollectionReference products = FirebaseFirestore.instance.collection('shopping');
 
-    void _openCamera(BuildContext context)  async{
-      final ImagePicker _picker = ImagePicker();
-      final XFile? photo = await _picker.pickImage(source: ImageSource.camera);
-    }
-
-
-    Future<void> addProduct() {
-      // Call the user's CollectionReference to add a new user
-      return products
-          .add({
-        'sId': "222", // John Doe
-        'name': "company", // Stokes and Sons
-        'image': "https://cdn.dsmcdn.com/mnresize/400/-/ty128/product/media/images/20210610/17/98485339/56271075/1/1_org.jpg",
-        'total':25,
-        'price':52,
-          })
-          .then((value) => print("User Added"))
-          .catchError((error) => print("Failed to add user: $error"));
-    }
+    // void _openCamera(BuildContext context)  async{
+    //   final ImagePicker _picker = ImagePicker();
+    //   final XFile? photo = await _picker.pickImage(source: ImageSource.camera);
+    // }
+    //
+    //
+    // Future<void> addProduct() {
+    //   // Call the user's CollectionReference to add a new user
+    //   return products
+    //       .add({
+    //     'sId': "222", // John Doe
+    //     'name': "company", // Stokes and Sons
+    //     'image': "https://cdn.dsmcdn.com/mnresize/400/-/ty128/product/media/images/20210610/17/98485339/56271075/1/1_org.jpg",
+    //     'total':25,
+    //     'price':52,
+    //       })
+    //       .then((value) => print("User Added"))
+    //       .catchError((error) => print("Failed to add user: $error"));
+    // }
 
 
     return DefaultTabController(
@@ -62,7 +63,7 @@ class tabViewClass extends StatelessWidget {
           bottomNavigationBar: buildBottomAppBar(context),
           body: TabBarView(children: [
             Home(),
-            basketPage()
+            Basket(),
           ]),
         ));
   }
