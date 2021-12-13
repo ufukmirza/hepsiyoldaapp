@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hepsiyoldaapp/components/appBar.dart';
+import 'package:hepsiyoldaapp/features/addProduct/addProductView.dart';
 import 'package:hepsiyoldaapp/features/basket/view/basketPage.dart';
 import 'package:hepsiyoldaapp/features/home/model/product_model.dart';
 import 'package:hepsiyoldaapp/features/home/view/home.dart';
@@ -42,8 +43,12 @@ class tabViewClass extends StatelessWidget {
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-             print("wqwas");
-             _openCamera(context);
+             //print("wqwas");
+             //_openCamera(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AddProduct()),
+              );
              //addProduct();
 
             },
