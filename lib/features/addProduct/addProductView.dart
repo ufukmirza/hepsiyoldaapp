@@ -154,7 +154,7 @@ class AddProductView extends State<AddProduct> {
                String downloadUrl="";
               if ( _pickedFile!= null) {
                 var ref = FirebaseStorage.instance.ref();
-                var addImg = await ref.child("image/img").putFile(_imageFile!);
+                var addImg = await ref.child("image/"+_imageFile!.uri.toString()).putFile(_imageFile!);
                 if (addImg != null) {
                   downloadUrl =  await addImg.ref.getDownloadURL();
                 }
