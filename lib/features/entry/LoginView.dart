@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hepsiyoldaapp/features/router/RouterDart.dart';
 import 'package:hepsiyoldaapp/features/tabview/tabViewClass.dart';
 
 class LoginView extends StatefulWidget {
@@ -230,7 +231,7 @@ class _LoginViewState extends State<LoginView> {
             ),
             MaterialButton(
               onPressed: () {
-                // Navigator.of(context).pushNamed(AppRoutes.authRegister);
+                Navigator.of(context).pushNamed('/registerScreen');
               },
               child: Text(
                 "Sign Up",

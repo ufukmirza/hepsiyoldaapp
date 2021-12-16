@@ -2,6 +2,7 @@
     package="com.example.hepsiyoldaapp">
    <application
         android:label="hepsiyoldaapp"
+       android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

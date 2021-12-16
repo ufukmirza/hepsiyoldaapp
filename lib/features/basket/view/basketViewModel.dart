@@ -14,7 +14,7 @@ abstract class basketViewModel extends  State<Basket>{
   Future<void> getAllProducts() async {
 
     Future<Database> dbFuture= DatabaseHelper().initializeDatabase();
-    dbFuture.then((value) async {
+  await dbFuture.then((value) async {
       var results = await value.query("products", columns: Product.columns);
       results.forEach((result) {
         Product product = Product.fromJson(result);
